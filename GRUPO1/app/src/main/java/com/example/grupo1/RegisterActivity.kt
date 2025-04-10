@@ -1,36 +1,59 @@
 package com.example.grupo1
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 
 class RegisterActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        val editTextNewUser = findViewById<EditText>(R.id.editTextNewUsername)
-        val editTextNewPass = findViewById<EditText>(R.id.editTextNewPassword)
-        val buttonRegister = findViewById<Button>(R.id.buttonRegister)
+        val etName = findViewById<EditText>(R.id.etName)
+        val etSurname = findViewById<EditText>(R.id.etSurname)
+        val etUsername = findViewById<EditText>(R.id.etUsername)
+        val etEmail = findViewById<EditText>(R.id.etEmail)
+        val etPassword = findViewById<EditText>(R.id.etPassword)
+        val etRepeatPassword = findViewById<EditText>(R.id.etRepeatPassword)
+        val btnRegister = findViewById<Button>(R.id.btnRegister)
+        val btnVolver = findViewById<Button>(R.id.btnVolver) // ← botón volver
 
-        buttonRegister.setOnClickListener {
-            val newUser = editTextNewUser.text.toString()
-            val newPass = editTextNewPass.text.toString()
+        btnRegister.setOnClickListener {
+            val name = etName.text.toString().trim()
+            val surname = etSurname.text.toString().trim()
+            val username = etUsername.text.toString().trim()
+            val email = etEmail.text.toString().trim()
+            val password = etPassword.text.toString()
+            val repeatPassword = etRepeatPassword.text.toString()
 
-            if (newUser.isNotBlank() && newPass.isNotBlank()) {
-                val resultIntent = Intent()
-                resultIntent.putExtra("usuario", newUser)
-                resultIntent.putExtra("clave", newPass)
-                setResult(Activity.RESULT_OK, resultIntent)
-                finish()
-            } else {
-                Toast.makeText(this, "Completa todos los campos", Toast.LENGTH_SHORT).show()
+            // Validaciones
+            if (name.isEmpty() || surname.isEmpty() || username.isEmpty() || email.isEmpty()) {
+                Toast.makeText(this, "Por favor, complete todos los campos obligatorios.", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
             }
+
+            if (password.length < 6) {
+                Toast.makeText(this, "La contraseña debe tener al menos 6 caracteres.", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if (password != repeatPassword) {
+                Toast.makeText(this, "Las contraseñas no coinciden.", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            // Todo OK → volver al login
+            Toast.makeText(this, "Registro exitoso. ¡Inicie sesión!", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        // Acción del botón Volver
+        btnVolver.setOnClickListener {
+            finish() // simplemente cierra esta actividad y vuelve al login
         }
     }
-
 }

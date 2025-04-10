@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color5"
-    tools:context=".LoginActivity">
+    tools:context=".MainActivity">
 
     <!-- Contenedor para centrar todo -->
     <LinearLayout
@@ -25,7 +25,7 @@
             android:id="@+id/imageUserIcon"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/baseline_person_24" />
+            android:src="@drawable/ic_user" />
 
         <!-- Texto LOGIN -->
         <TextView
@@ -33,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="LOGIN"
+            android:text="INICIAR SESION"
             android:textAllCaps="true"
             android:textSize="28sp"
             android:textStyle="bold"
@@ -45,7 +45,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            app:startIconDrawable="@drawable/ic_user"
             app:boxBackgroundMode="outline"
             app:boxStrokeColor="@color/color2"
             app:hintTextColor="@color/color2">
@@ -54,9 +53,8 @@
                 android:id="@+id/editTextUsername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Username"
+                android:hint="Usuario"
                 android:textColor="@color/color1"
-                android:textCursorDrawable="@null"
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -66,7 +64,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            app:startIconDrawable="@drawable/ic_lock"
             app:boxBackgroundMode="outline"
             app:boxStrokeColor="@color/color2"
             app:passwordToggleEnabled="true"
@@ -76,10 +73,10 @@
                 android:id="@+id/editTextPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Password"
+                android:hint="Contraseña"
                 android:textColor="@color/color1"
                 android:textCursorDrawable="@null"
-                android:inputType="textPassword" />
+                android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Botón LOGIN -->
@@ -95,6 +92,19 @@
             android:elevation="4dp"
             android:padding="12dp" />
 
+        <!-- Botón REGISTRARSE -->
+        <Button
+            android:id="@+id/buttonRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="REGISTRARSE"
+            android:textAllCaps="true"
+            android:backgroundTint="@color/color2"
+            android:textColor="@color/color5"
+            android:elevation="4dp"
+            android:padding="12dp" />
+
         <!-- Forgot Password -->
         <LinearLayout
             android:layout_width="wrap_content"
@@ -106,7 +116,7 @@
                 android:id="@+id/textViewForgotPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Forgot Your Password?"
+                android:text="¿Olvidaste tu contraseña?"
                 android:textColor="@color/color3"
                 android:textSize="14sp" />
 
@@ -114,7 +124,7 @@
                 android:id="@+id/textViewClickHere"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" Click here"
+                android:text=" Click aqui"
                 android:textColor="@color/color1"
                 android:textStyle="bold"
                 android:textSize="14sp" />
