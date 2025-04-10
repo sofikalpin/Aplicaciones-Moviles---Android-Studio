@@ -136,13 +136,26 @@
                 android:id="@+id/btnContinuar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Continuar"
+                android:text="Guardar"
                 android:backgroundTint="@color/color1"
                 android:textColor="@color/color5"
                 android:padding="10dp"
                 android:textStyle="bold"
                 android:elevation="3dp"
                 android:layout_marginTop="8dp" />
+
+            <!-- Botón Cerrar Sesión -->
+            <Button
+                android:id="@+id/btnCerrarSesion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cerrar Sesión"
+                android:backgroundTint="@color/color2"
+                android:textColor="@color/color5"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:elevation="3dp"
+                android:layout_marginTop="16dp" />
 
         </LinearLayout>
     </FrameLayout>

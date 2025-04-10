@@ -1,8 +1,10 @@
 package com.example.grupo1
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
 class WelcomeActivity : AppCompatActivity() {
@@ -43,5 +45,27 @@ class WelcomeActivity : AppCompatActivity() {
         btnContinuar.setOnClickListener {
             Toast.makeText(this, "Gracias por elegir tus preferencias", Toast.LENGTH_SHORT).show()
         }
+
+        // Botón cerrar sesión
+        val btnCerrarSesion = findViewById<Button>(R.id.btnCerrarSesion)
+        btnCerrarSesion.setOnClickListener {
+            mostrarDialogoConfirmacion()
+        }
+    }
+
+    private fun mostrarDialogoConfirmacion() {
+        AlertDialog.Builder(this)
+            .setTitle("Cerrar Sesión")
+            .setMessage("¿Está seguro que desea cerrar la sesión?")
+            .setPositiveButton("Sí") { _, _ ->
+                // Si el usuario confirma, volvemos a la pantalla de inicio de sesión
+                val intent = Intent(this, MainActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
+                startActivity(intent)
+                finish()
+            }
+            .setNegativeButton("No", null) // No hace nada si el usuario cancela
+            .setIcon(android.R.drawable.ic_dialog_alert)
+            .show()
     }
 }
