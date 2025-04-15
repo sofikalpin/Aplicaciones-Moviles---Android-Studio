@@ -16,12 +16,12 @@ class WelcomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_welcome)
 
-        // Texto de bienvenida personalizado
+
         val usuario = intent.getStringExtra("usuario")
         val tvWelcome = findViewById<TextView>(R.id.tvWelcome)
         tvWelcome.text = "¡Bienvenido/a, $usuario!"
 
-        // RadioGroup para seleccionar plataforma
+
         val rgPlatform = findViewById<RadioGroup>(R.id.rgPlatform)
         imgPlatformLogo = findViewById(R.id.imgPlatformLogo)
 
@@ -32,7 +32,7 @@ class WelcomeActivity : AppCompatActivity() {
             }
         }
 
-        // Mostrar EditText si se marca "Otra"
+
         val cbOtra = findViewById<CheckBox>(R.id.cbOtra)
         etOtraPreferencia = findViewById(R.id.etOtraPreferencia)
 
@@ -40,13 +40,13 @@ class WelcomeActivity : AppCompatActivity() {
             etOtraPreferencia.visibility = if (isChecked) View.VISIBLE else View.GONE
         }
 
-        // Botón continuar (opcionalmente podés usarlo para enviar info o cambiar de pantalla)
+
         val btnContinuar = findViewById<Button>(R.id.btnContinuar)
         btnContinuar.setOnClickListener {
             Toast.makeText(this, "Gracias por elegir tus preferencias", Toast.LENGTH_SHORT).show()
         }
 
-        // Botón cerrar sesión
+
         val btnCerrarSesion = findViewById<Button>(R.id.btnCerrarSesion)
         btnCerrarSesion.setOnClickListener {
             mostrarDialogoConfirmacion()

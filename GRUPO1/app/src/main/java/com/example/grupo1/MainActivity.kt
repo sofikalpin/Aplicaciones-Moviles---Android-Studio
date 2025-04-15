@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
             val username = editTextUsername.text.toString().trim()
             val password = editTextPassword.text.toString().trim()
 
-            // Log para depuración
+
             println("Username ingresado: '$username'")
             println("Password ingresado: '$password'")
 
@@ -51,7 +51,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        // Ambos botones llevan al registro
         val goToRegister = {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivityForResult(intent, 1)
@@ -69,7 +68,6 @@ class MainActivity : AppCompatActivity() {
             registeredPassword = data.getStringExtra("clave")
             Toast.makeText(this, "Usuario registrado exitosamente", Toast.LENGTH_SHORT).show()
 
-            // Log para confirmar que los datos se recibieron correctamente
             println("Usuario registrado: '$registeredUsername'")
             println("Contraseña registrada: '$registeredPassword'")
         }

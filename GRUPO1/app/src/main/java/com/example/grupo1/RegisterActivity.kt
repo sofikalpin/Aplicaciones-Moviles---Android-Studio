@@ -18,7 +18,7 @@ class RegisterActivity : AppCompatActivity() {
         val etPassword = findViewById<EditText>(R.id.etPassword)
         val etRepeatPassword = findViewById<EditText>(R.id.etRepeatPassword)
         val btnRegister = findViewById<Button>(R.id.btnRegister)
-        val btnVolver = findViewById<Button>(R.id.btnVolver) // ← botón volver
+        val btnVolver = findViewById<Button>(R.id.btnVolver)
 
         btnRegister.setOnClickListener {
             val name = etName.text.toString().trim()
@@ -28,7 +28,7 @@ class RegisterActivity : AppCompatActivity() {
             val password = etPassword.text.toString()
             val repeatPassword = etRepeatPassword.text.toString()
 
-            // Validaciones
+
             if (name.isEmpty() || surname.isEmpty() || username.isEmpty() || email.isEmpty()) {
                 Toast.makeText(this, "Por favor, complete todos los campos obligatorios.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
@@ -44,16 +44,16 @@ class RegisterActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // Todo OK → volver al login
+
             Toast.makeText(this, "Registro exitoso. ¡Inicie sesión!", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
         }
 
-        // Acción del botón Volver
+
         btnVolver.setOnClickListener {
-            finish() // simplemente cierra esta actividad y vuelve al login
+            finish()
         }
     }
 }

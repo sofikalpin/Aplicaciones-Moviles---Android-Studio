@@ -7,7 +7,7 @@
     android:background="@color/color5"
     tools:context=".MainActivity">
 
-    <!-- Contenedor para centrar todo -->
+
     <LinearLayout
         android:id="@+id/container"
         android:layout_width="0dp"
@@ -20,14 +20,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Icono de usuario -->
+
         <ImageView
             android:id="@+id/imageUserIcon"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:src="@drawable/ic_user" />
 
-        <!-- Texto LOGIN -->
+
         <TextView
             android:id="@+id/textViewTitle"
             android:layout_width="wrap_content"
@@ -39,7 +39,7 @@
             android:textStyle="bold"
             android:textColor="@color/color1" />
 
-        <!-- Campo de usuario -->
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutUsername"
             android:layout_width="match_parent"
@@ -58,7 +58,7 @@
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Campo de contraseña -->
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutPassword"
             android:layout_width="match_parent"
@@ -79,7 +79,7 @@
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Botón LOGIN -->
+
         <Button
             android:id="@+id/buttonLogin"
             android:layout_width="match_parent"
@@ -92,7 +92,7 @@
             android:elevation="4dp"
             android:padding="12dp" />
 
-        <!-- Botón REGISTRARSE -->
+
         <Button
             android:id="@+id/buttonRegister"
             android:layout_width="match_parent"
@@ -105,7 +105,7 @@
             android:elevation="4dp"
             android:padding="12dp" />
 
-        <!-- Forgot Password -->
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
