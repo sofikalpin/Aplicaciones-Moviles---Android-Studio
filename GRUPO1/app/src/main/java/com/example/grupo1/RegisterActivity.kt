@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import android.util.Patterns
+
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -28,14 +30,27 @@ class RegisterActivity : AppCompatActivity() {
             val password = etPassword.text.toString()
             val repeatPassword = etRepeatPassword.text.toString()
 
-
             if (name.isEmpty() || surname.isEmpty() || username.isEmpty() || email.isEmpty()) {
-                Toast.makeText(this, "Por favor, complete todos los campos obligatorios.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this,
+                    "Por favor, complete todos los campos obligatorios.",
+                    Toast.LENGTH_SHORT
+                ).show()
+                return@setOnClickListener
+            }
+
+            if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                Toast.makeText(this, "Ingrese un correo electrónico válido.", Toast.LENGTH_SHORT)
+                    .show()
                 return@setOnClickListener
             }
 
             if (password.length < 6) {
-                Toast.makeText(this, "La contraseña debe tener al menos 6 caracteres.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this,
+                    "La contraseña debe tener al menos 6 caracteres.",
+                    Toast.LENGTH_SHORT
+                ).show()
                 return@setOnClickListener
             }
 
@@ -45,15 +60,10 @@ class RegisterActivity : AppCompatActivity() {
             }
 
 
-            Toast.makeText(this, "Registro exitoso. ¡Inicie sesión!", Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
 
-
-        btnVolver.setOnClickListener {
-            finish()
+            btnVolver.setOnClickListener {
+                finish()
+            }
         }
     }
 }

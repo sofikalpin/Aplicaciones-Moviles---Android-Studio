@@ -43,8 +43,33 @@ class WelcomeActivity : AppCompatActivity() {
 
         val btnContinuar = findViewById<Button>(R.id.btnContinuar)
         btnContinuar.setOnClickListener {
+            val selectedPlatformId = rgPlatform.checkedRadioButtonId
+            val isOtraChecked = cbOtra.isChecked
+            val otraPreferenciaTexto = etOtraPreferencia.text.toString().trim()
+
+            // Validar selección de sistema operativo
+            if (selectedPlatformId == -1) {
+                Toast.makeText(this, "Por favor, seleccione un sistema operativo", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            // Validar que "Otra" esté seleccionada
+            if (!isOtraChecked) {
+                Toast.makeText(this, "Por favor, seleccione la opción 'Otra' como preferencia", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            // Validar que se haya ingresado texto en el campo "Otra"
+            if (otraPreferenciaTexto.isEmpty()) {
+                Toast.makeText(this, "Por favor, complete su preferencia en el campo 'Otra'", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            // Si pasa todas las validaciones
             Toast.makeText(this, "Gracias por elegir tus preferencias", Toast.LENGTH_SHORT).show()
         }
+
+
 
 
         val btnCerrarSesion = findViewById<Button>(R.id.btnCerrarSesion)
