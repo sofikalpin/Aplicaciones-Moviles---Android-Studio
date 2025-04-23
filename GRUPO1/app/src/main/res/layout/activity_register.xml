@@ -4,115 +4,153 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:background="#FFFFFF">
+    android:background="@color/color5">
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
 
-        <LinearLayout
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/techno_logo"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="REGISTRO"
+            android:textAllCaps="true"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="@color/color1"
+            android:layout_marginBottom="24dp" />
+        
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center_horizontal"
-            android:layout_gravity="center"
-            android:padding="24dp">
+            android:layout_marginBottom="16dp"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/color2">
 
-            <TextView
-                android:id="@+id/tvTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Registro"
-                android:textSize="26sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="24dp" />
-
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:hint="Nombre"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:minHeight="48dp"
-                android:paddingVertical="12dp"
-                android:layout_marginBottom="16dp" />
+                android:textColor="@color/color1"
+                android:inputType="textPersonName" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/color2">
+
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etSurname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:hint="Apellido"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:minHeight="48dp"
-                android:paddingVertical="12dp"
-                android:layout_marginBottom="16dp" />
+                android:textColor="@color/color1"
+                android:inputType="textPersonName" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/color2">
+
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:hint="Usuario"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:minHeight="48dp"
-                android:paddingVertical="12dp"
-                android:layout_marginBottom="16dp" />
+                android:textColor="@color/color1"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/color2">
+
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:hint="Email"
-                android:inputType="textEmailAddress"
+                android:textColor="@color/color1"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:passwordToggleEnabled="true"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/color2">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="48dp"
-                android:paddingVertical="12dp"
-                android:layout_marginBottom="16dp" />
+                android:hint="Contraseña"
+                android:textColor="@color/color1"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Contraseña con botón mostrar/ocultar -->
-            <com.google.android.material.textfield.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:passwordToggleEnabled="true"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/color2">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etRepeatPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                app:passwordToggleEnabled="true">
+                android:hint="Repetir contraseña"
+                android:textColor="@color/color1"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etPassword"
-                    android:hint="Contraseña"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPassword" />
-            </com.google.android.material.textfield.TextInputLayout>
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registrarse"
+            android:textAllCaps="true"
+            android:minHeight="48dp"
+            android:backgroundTint="@color/color1"
+            android:textColor="@color/color5"
+            android:layout_marginBottom="12dp"
+            android:elevation="4dp"
+            android:padding="12dp" />
 
-            <!-- Repetir contraseña con botón mostrar/ocultar -->
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                app:passwordToggleEnabled="true">
+        <Button
+            android:id="@+id/btnVolver"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Volver"
+            android:textAllCaps="true"
+            android:minHeight="48dp"
+            android:backgroundTint="@color/color2"
+            android:textColor="@color/color5"
+            android:elevation="4dp"
+            android:padding="12dp" />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etRepeatPassword"
-                    android:hint="Repetir contraseña"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPassword" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <Button
-                android:id="@+id/btnRegister"
-                android:text="Registrarse"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:minHeight="48dp"
-                android:backgroundTint="@android:color/holo_blue_dark"
-                android:textColor="@android:color/white"
-                android:layout_marginBottom="12dp" />
-
-            <Button
-                android:id="@+id/btnVolver"
-                android:text="Volver"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:minHeight="48dp"
-                android:backgroundTint="@android:color/darker_gray"
-                android:textColor="@android:color/white" />
-
-        </LinearLayout>
-    </FrameLayout>
+    </LinearLayout>
 </ScrollView>
