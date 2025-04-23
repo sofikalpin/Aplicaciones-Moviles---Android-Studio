@@ -56,7 +56,10 @@ class MainActivity : AppCompatActivity() {
             startActivityForResult(intent, 1)
         }
 
-        textClickHere.setOnClickListener { goToRegister() }
+        textClickHere.setOnClickListener {
+            val intent = Intent(this, ForgotPasswordActivity::class.java)
+            startActivity(intent)
+        }
         buttonRegister.setOnClickListener { goToRegister() }
     }
 

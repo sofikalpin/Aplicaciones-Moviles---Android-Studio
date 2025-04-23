@@ -6,7 +6,6 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import android.util.Patterns
 
-
 class RegisterActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,26 +30,17 @@ class RegisterActivity : AppCompatActivity() {
             val repeatPassword = etRepeatPassword.text.toString()
 
             if (name.isEmpty() || surname.isEmpty() || username.isEmpty() || email.isEmpty()) {
-                Toast.makeText(
-                    this,
-                    "Por favor, complete todos los campos obligatorios.",
-                    Toast.LENGTH_SHORT
-                ).show()
+                Toast.makeText(this, "Por favor, complete todos los campos obligatorios.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
             if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                Toast.makeText(this, "Ingrese un correo electrónico válido.", Toast.LENGTH_SHORT)
-                    .show()
+                Toast.makeText(this, "Ingrese un correo electrónico válido.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
             if (password.length < 6) {
-                Toast.makeText(
-                    this,
-                    "La contraseña debe tener al menos 6 caracteres.",
-                    Toast.LENGTH_SHORT
-                ).show()
+                Toast.makeText(this, "La contraseña debe tener al menos 6 caracteres.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
@@ -59,11 +49,13 @@ class RegisterActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+            Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show()
+        }
 
-
-            btnVolver.setOnClickListener {
-                finish()
-            }
+        btnVolver.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 }

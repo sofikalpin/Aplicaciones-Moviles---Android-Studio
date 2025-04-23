@@ -117,7 +117,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="¿Olvidaste tu contraseña?"
-                android:textColor="@color/color3"
+                android:textColor="@color/color2"
                 android:textSize="14sp" />
 
             <TextView

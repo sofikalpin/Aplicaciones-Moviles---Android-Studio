@@ -44,30 +44,40 @@ class WelcomeActivity : AppCompatActivity() {
         val btnContinuar = findViewById<Button>(R.id.btnContinuar)
         btnContinuar.setOnClickListener {
             val selectedPlatformId = rgPlatform.checkedRadioButtonId
-            val isOtraChecked = cbOtra.isChecked
+
+            val cbProgramacion = findViewById<CheckBox>(R.id.cbProgramacion)
+            val cbRedes = findViewById<CheckBox>(R.id.cbRedes)
+            val cbSeguridad = findViewById<CheckBox>(R.id.cbSeguridad)
+            val cbHardware = findViewById<CheckBox>(R.id.cbHardware)
+            val cbOtra = findViewById<CheckBox>(R.id.cbOtra)
             val otraPreferenciaTexto = etOtraPreferencia.text.toString().trim()
 
-            // Validar selección de sistema operativo
+            // Validar selección de plataforma
             if (selectedPlatformId == -1) {
-                Toast.makeText(this, "Por favor, seleccione un sistema operativo", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Por favor, seleccione una plataforma", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            // Validar que "Otra" esté seleccionada
-            if (!isOtraChecked) {
-                Toast.makeText(this, "Por favor, seleccione la opción 'Otra' como preferencia", Toast.LENGTH_SHORT).show()
+            // Validar al menos una preferencia seleccionada
+            val algunaSeleccionada = cbProgramacion.isChecked || cbRedes.isChecked ||
+                    cbSeguridad.isChecked || cbHardware.isChecked || cbOtra.isChecked
+
+            if (!algunaSeleccionada) {
+                Toast.makeText(this, "Por favor, seleccione al menos una preferencia", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            // Validar que se haya ingresado texto en el campo "Otra"
-            if (otraPreferenciaTexto.isEmpty()) {
+            // Validar campo "Otra" si está seleccionada
+            if (cbOtra.isChecked && otraPreferenciaTexto.isEmpty()) {
                 Toast.makeText(this, "Por favor, complete su preferencia en el campo 'Otra'", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            // Si pasa todas las validaciones
+            // Todo pasó bien
             Toast.makeText(this, "Gracias por elegir tus preferencias", Toast.LENGTH_SHORT).show()
         }
+
+
 
 
 
