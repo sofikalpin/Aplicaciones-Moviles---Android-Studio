@@ -29,8 +29,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
                 Toast.makeText(this, "Ingresá un correo electrónico válido", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-
-            // Simula el envío del código
+            
             tvMensaje.text = "Se envió un código a $email"
             tvMensaje.visibility = TextView.VISIBLE
             tvReenviar.visibility = TextView.VISIBLE
