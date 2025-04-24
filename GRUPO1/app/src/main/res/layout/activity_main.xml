@@ -23,8 +23,8 @@
 
         <ImageView
             android:id="@+id/imageUserIcon"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="169dp"
+            android:layout_height="144dp"
             android:src="@drawable/techno_logo" />
 
         <TextView
